@@ -1,0 +1,121 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+int main(woid)
+{
+	/*
+
+	//%% 퍼센트를 출력 
+
+	int x, y;
+	x = 1;
+	y = ++x;
+	printf("x=%d y=%d\n", x, y);
+
+	y = x++;
+	printf("x=%d y=%d\n", x, y);
+
+	return 0;
+	
+	*/
+
+	/*
+	int money; //현재 가지고 있는 돈
+	int price; //캔디의 가격
+	int n_price;
+	int change;
+
+
+	printf("현재 가지고 있는 돈:");
+	scanf("%d", &money);
+
+	printf("캔디의 가격:");
+	scanf("%d", &price);
+
+	n_price = money / price;
+	printf("최대로 살 수 있는 캔디의 개수=%d\n", n_price);
+	change = money % price;
+	printf("캔디 구입 후 남은 돈=%d\n", change);
+
+
+	return 0;
+
+	*/
+
+   /*자동판매기 시뮬레이션
+
+	int money;
+	int price;
+	int change;
+	int coin100s;
+	int coin10s;
+
+	printf("투입한 돈:");
+	scanf("%d", &money);
+	printf("물건값:");
+	scanf("%d", &price);
+
+	change = money - price;
+	printf("거스름돈:%d\n\n", change);
+
+	int coin500s = change / 500;
+	change = change % 500;
+
+	coin100s = change / 100; //730/100=7
+	change = change % 100;//100으로 나누고 남은 돈 30
+
+	int coin50s = change / 50;
+	change = change % 50;
+
+
+	coin10s = change / 10; //30/10=3
+	change = change % 10;  //10으로 나누고 남은 돈 0
+
+	
+
+	printf("500원 동전의 개수:%d\n", coin500s);
+	printf("100원 동전의 개수:%d\n", coin100s);
+	printf("50원 동전의 개수:%d\n", coin50s);
+	printf("10원 동전의 개수:%d\n", coin10s);
+
+	return 0;
+	*/
+	/* 
+	int x = 10, y = 10;
+	printf("x=%d, y=%d\n", x, y);
+
+	x += 1;
+	printf("(x+=1)이후 x=%d\n", x);
+
+	y *= 3;
+	printf("(y*=3)이후 y=%d\n", y);
+
+	return 0; */
+
+	/*
+
+	double x;
+	double y;
+
+	printf("2개의 실수를 입력하시오.:");
+	scanf("%lf %lf", &x, &y);
+	printf("합의 정수부 = %d\n", (int)x +(int)y);
+
+
+	return 0;
+	*/
+
+    /*복리 계산*/
+
+    int init_money = 24;
+	double interest = 0.06;
+	int years = 382;
+
+	double money = init_money * pow((1.0 + interest), years);
+
+	printf("%d년 후의 원리금=%f\n", years, money);
+	return 0;
+
+
+
+}
