@@ -1,0 +1,83 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <time.h>  //srand(time(NULL))
+
+/*주어진 수의 약수 출력하는 프로그램*/
+int divisor(int n)
+{
+	int i;
+	
+	for (i = 1; i <= n; i++)
+	{
+		if (n % i != 0)
+			continue;
+		printf("%d ", i);
+	}
+	printf("\n");
+	return i;
+}
+int main(void)
+{
+	srand(time(NULL));
+	int k = rand() % 11; 
+
+	printf("%d의 약수=", k);
+	divisor(k);
+	
+
+	return 0;
+}
+
+/* 소수 출력 함수*/
+int prime(int n);
+
+int main(void)
+{
+	int x = 0;
+	for(x = 1; x <= 100; x++) //1에서 100까지의 정수 중 소수이면 출력.
+	{
+		if (x == prime(x))
+			printf("%d ", x);
+
+	}
+	printf("\n");
+	return 0;
+}
+
+int prime(int n) //소수 함수
+{
+	int i;
+	
+	for (i = 2; i < n; i++) //2부터 n-1까지의 숫자로 n을 나누어서 
+	{
+		if (n % i == 0) //나누어 떨어지면 소수가 아니므로 반복 탈출.
+			break;
+		 
+	}
+	
+	return i;
+}
+
+/*거듭제곱 함수*/
+int ipower(int n, int k);
+
+int main()
+{
+	int i;
+	for (i = 0; i < 6; i++)
+	{
+		ipower(3,i);
+	}
+	return 0;
+}
+int ipower(int n, int k)
+{
+	int j;
+	long result = 1;
+	for (j = 0; j < k; j++)
+	{
+		result *= n;
+	}
+	printf("%d\n", result);
+	return result;
+}
