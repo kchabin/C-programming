@@ -1,0 +1,29 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>	
+#include <stdlib.h>
+ 
+typedef struct rec
+{
+	int i;
+	float PI;
+	char A;
+
+}my_record;
+
+int main()
+{
+	my_record* p;
+	p = (my_record*)malloc(3 * sizeof(my_record)); 
+	
+	p[0].i = 10;
+	p[1].PI = 3.14;
+	p[2].A = 'a';
+
+	printf("%d\n", p[0].i);
+	printf("%f\n", p[1].PI);
+	printf("%c\n", p[2].A);
+
+	free(p);
+	return 0;
+
+}
