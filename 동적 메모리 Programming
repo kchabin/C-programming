@@ -113,3 +113,43 @@ int main()
 	return 0;
 }
  
+=========================================================================================
+
+//문제 4번 
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>	
+#include <stdlib.h>
+#define SIZE 100 //사이즈 100 선언
+ 
+int main()
+{
+	 
+	int* p;
+	int sum = 0;
+
+	 
+	p = (int*)malloc( SIZE* sizeof(int)); //동적메모리 할당
+
+	if (p == NULL)
+	{
+		printf("메모리 할당 오류\n");
+		exit(1);
+	}
+	
+	
+	srand((unsigned)time(NULL)); //무작위 난수 생성
+	for (int i = 0; i < SIZE; i++)
+	{
+		p[i] = rand() % 100; //난수 생성 정수 100개 
+		sum += p[i];
+	}
+
+	int average = sum / SIZE; //평균=총합/100
+
+	printf("평균= %d\n", average);
+
+	free(p);
+	return 0;
+}
+ 
