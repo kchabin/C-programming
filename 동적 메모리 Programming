@@ -153,3 +153,50 @@ int main()
 	return 0;
 }
  
+===============================================================================================
+
+//문제 5번
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>	
+#include <stdlib.h>
+ 
+struct course {  //성적을 나타내는 구조체
+	char subject[30]; //과목 이름
+	double marks; //학점
+};
+
+ 
+int main()
+{
+	int i,n;
+	struct course* p; //구조체 포인터 변수
+	int sum = 0;
+
+	printf("구조체의 개수:");
+	scanf("%d", &n);
+	p = (struct course*)malloc( n* sizeof(struct course)); //동적메모리 할당
+
+	if (p == NULL)
+	{
+		printf("메모리 할당 오류\n");
+		exit(1);
+	}
+
+	for (i = 0; i < n; i++)
+	{
+		printf("과목 이름과 성적을 입력하시오: ");
+		scanf("%s %lf", p[i].subject, &p[i].marks);
+	}
+
+	printf("====저장된 정보 출력====\n");
+	for (i = 0; i < n; i++)
+	{
+		printf("%s %lf\n", p[i].subject, p[i].marks);
+	}
+	 
+	 
+
+	free(p);
+	return 0;
+}
