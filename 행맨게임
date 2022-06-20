@@ -1,0 +1,38 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+/*시도횟수 10회 제한*/
+
+int main()
+{
+	char solution[100] = "meet at midnight";
+	char answer[100] = "____ __ _______";
+	char ch;
+	int i;
+	int count = 0;
+
+	while (1)
+	{
+		count++;
+
+		printf("\n문자열을 입력하시오: %s \n", answer);
+		printf("글자를 추측하시오(시도횟수:%d	):", count);
+		ch = getch();
+		for (i = 0; solution[i] != NULL; i++)
+		{
+			if (solution[i] == ch)
+				answer[i] = ch;
+		}
+		if (count == 10) {
+			printf("최대 시도횟수(10)를 초과했습니다.\n");
+			break;
+		}
+		if (strcmp(solution, answer) == 0)
+		{
+			printf("정답\n");
+			break;
+		}
+	}
+	 
+	return 0;
+}
