@@ -1,0 +1,15 @@
+//main.c 
+#include <stdio.h>
+
+extern int add(int x, int y);
+int main()
+{
+	printf("합계=%d\n", add(26, 4));
+	return 0;
+}
+
+//add.c
+int add(int x, int y)
+{
+	return x + y;
+}
