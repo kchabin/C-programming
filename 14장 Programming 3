@@ -1,0 +1,27 @@
+//main.c
+#include "hello.h"
+#include <stdio.h>
+
+
+int main()
+{
+	
+	hello("청명");
+	return 0;
+}
+
+//hello.c
+#include "hello.h"	
+#include <stdio.h>
+void hello(char* name)
+{
+	printf("안녕 %s\n", name);
+}
+
+//hello.h
+#ifndef HELLO
+#define HELLO
+
+void hello(char* name);
+
+#endif
